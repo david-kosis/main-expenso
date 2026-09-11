@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expenso — Track Customers, Sales & Payments in One Ledger</title>
+<meta name="description" content="Expenso is the simple business ledger for shops and traders: track customers, suppliers, products, sales and payments in one place, with reports that show exactly what's outstanding.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Expenso">
+<meta name="theme-color" content="#071d49">
+<link rel="canonical" href="https://www.expenso.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Expenso">
+<meta property="og:title" content="Expenso — Track Customers, Sales & Payments in One Ledger">
+<meta property="og:description" content="The simple business ledger for shops and traders. Customers, suppliers, products, sales and payments, all in one place.">
+<meta property="og:url" content="https://www.expenso.app/">
+<meta property="og:image" content="https://www.expenso.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_NG">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expenso — Track Customers, Sales & Payments in One Ledger">
+<meta name="twitter:description" content="The simple business ledger for shops and traders. Customers, suppliers, products, sales and payments, all in one place.">
+<meta name="twitter:image" content="https://www.expenso.app/assets/og-image.png">
+
+<!-- Icons / manifest -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Structured data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Expenso",
+  "url": "https://www.expenso.app/",
+  "logo": "https://www.expenso.app/assets/favicon.svg",
+  "description": "Expenso is a simple business manager for tracking customers, suppliers, products, sales and payments.",
+  "email": "hello@expenso.app"
+}
+</script>
+
+<!-- Structured data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Expenso",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Expenso helps small businesses track customers, suppliers, products, sales and payments in one simple ledger, with reports that show what's outstanding.",
+  "url": "https://www.expenso.app/",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "NGN"
+  }
+}
+</script>
+
+<!-- Structured data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Expenso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Expenso is a simple business manager for tracking customers, suppliers, products, sales and payments — built for shops, traders, and small businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Expenso free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Create an account and start tracking your customers, sales, and payments at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What currency does Expenso use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Expenso displays amounts in Naira, so the figures match what your business actually deals in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Expenso runs in your web browser, so there's nothing to install."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see reports on my sales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Filter your transactions by day, week, or month and see exactly how much came in, went out, and is still outstanding."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#071d49;
+    --ink-soft:#263653;
+    --paper:#f4f6f9;
+    --card:#ffffff;
+    --line:#dce1ea;
+    --muted:#5b6b8a;
+    --muted-2:#8993a8;
+    --accent-1:#a3131b;
+    --accent-2:#e31b23;
+    --accent-3:#ff4d4d;
+    --good:#16823b;
+    --owe:#d71925;
+    --radius-card:6px;
+    --serif:'Lora', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', 'DejaVu Sans Mono', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink-soft);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    color:var(--ink);
+    margin:0 0 0.5em;
+    line-height:1.15;
+    font-weight:600;
+  }
+
+  p{margin:0 0 1em; max-width:62ch;}
+  a{color:inherit;}
+  .container{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  .skip-link{
+    position:absolute; left:-999px; top:auto;
+    background:var(--ink); color:#fff; padding:10px 16px; z-index:1000;
+    border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0; top:0;}
+
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+    outline:3px solid var(--accent-2);
+    outline-offset:2px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky; top:0; z-index:100;
+    background:rgba(244,246,249,0.92);
+    backdrop-filter:saturate(160%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px; background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); color:#fff; font-weight:700; font-size:18px;
+    flex-shrink:0;
+  }
+  .brand-word{font-family:var(--serif); font-weight:700; font-size:20px; color:var(--ink);}
+
+  nav.primary{display:flex; align-items:center; gap:28px;}
+  nav.primary a{
+    text-decoration:none; color:var(--ink-soft); font-size:15px; font-weight:500;
+  }
+  nav.primary a:hover{color:var(--ink);}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 20px; border-radius:6px; font-weight:600; font-size:15px;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    font-family:var(--sans);
+  }
+  .btn-primary{
+    background:linear-gradient(120deg, var(--accent-1), var(--accent-2) 55%, var(--accent-3));
+    color:#fff;
+  }
+  .btn-primary:hover{filter:brightness(1.05);}
+  .btn-ghost{
+    background:transparent; color:var(--ink); border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  .menu-toggle{
+    display:none; background:none; border:none; padding:8px; cursor:pointer;
+  }
+  .menu-toggle svg{width:24px; height:24px; display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:76px 0 88px;
+    background:
+      radial-gradient(700px 380px at 85% -10%, rgba(227,27,35,0.06), transparent 60%),
+      var(--paper);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-block; font-size:14px; color:var(--muted); margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 3.6vw, 3.2rem);
+    max-width:15ch;
+  }
+  .hero .lede{
+    font-size:18px; color:var(--muted); max-width:46ch;
+  }
+  .hero-ctas{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .trust-line{
+    margin-top:26px; font-size:14px; color:var(--muted-2);
+    display:flex; align-items:center; gap:10px;
+  }
+  .trust-line svg{width:16px; height:16px; flex-shrink:0;}
+
+  /* Receipt / ledger card */
+  .ledger-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 22px 44px -26px rgba(7,29,73,0.35);
+    overflow:hidden;
+    position:relative;
+  }
+  .ledger-head{
+    background:var(--ink); color:#fff; padding:16px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .ledger-head .who{font-family:var(--serif); font-size:16px;}
+  .ledger-head .tag{
+    font-size:11px; letter-spacing:0.02em; color:#cfe8d4;
+    background:rgba(22,130,59,0.35); border:1px solid rgba(22,130,59,0.6);
+    padding:4px 8px; border-radius:20px; display:flex; align-items:center; gap:6px;
+  }
+  .ledger-head .tag .dot{width:6px; height:6px; border-radius:50%; background:#3fd77a; display:inline-block;}
+  .ledger-body{padding:18px 20px 8px;}
+  table.ledger{width:100%; border-collapse:collapse; font-size:14px;}
+  table.ledger th{
+    text-align:left; font-weight:600; color:var(--muted); font-size:12.5px;
+    padding:0 0 10px; border-bottom:1px solid var(--line);
+  }
+  table.ledger td{
+    padding:11px 0; border-bottom:1px dashed var(--line); color:var(--ink-soft);
+  }
+  table.ledger td.num, table.ledger th.num{text-align:right; font-family:var(--mono);}
+  .ledger-totals{
+    padding:14px 20px 20px; display:flex; flex-direction:column; gap:8px;
+  }
+  .ledger-totals .row{display:flex; justify-content:space-between; font-size:14px;}
+  .ledger-totals .row span:last-child{font-family:var(--mono); font-weight:600;}
+  .ledger-totals .balance span:last-child{color:var(--owe);}
+  .ledger-totals .balance{
+    border-top:1px solid var(--line); padding-top:10px; margin-top:2px; font-weight:600;
+  }
+  .ledger-foot{
+    border-top:1px dashed var(--line);
+    padding:12px 20px; font-size:12.5px; color:var(--muted-2);
+    display:flex; justify-content:space-between;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:60ch; margin-bottom:44px;}
+  .section-head .kicker{color:var(--accent-2); font-weight:600; font-size:14px; display:block; margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.6rem, 2.6vw, 2.2rem);}
+  .section-head p{color:var(--muted); font-size:17px;}
+
+  /* ---------- Problem ---------- */
+  .problem{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .problem-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .problem ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:18px;}
+  .problem li{display:flex; gap:14px; color:var(--muted); font-size:16px;}
+  .problem li svg{flex-shrink:0; width:20px; height:20px; margin-top:2px; color:var(--accent-2);}
+
+  /* ---------- Features (ledger rows) ---------- */
+  .feature-ledger{border-top:1px solid var(--line);}
+  .feature-row{
+    display:grid; grid-template-columns:64px 220px 1fr; gap:24px; align-items:start;
+    padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .feature-row .f-icon{
+    width:48px; height:48px; border-radius:8px; background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .feature-row .f-icon svg{width:22px; height:22px; color:#fff;}
+  .feature-row h3{font-size:19px; margin:6px 0 0;}
+  .feature-row p{color:var(--muted); margin:0; max-width:58ch;}
+
+  /* ---------- How it works ---------- */
+  .how{background:var(--ink); color:#dfe6f2;}
+  .how .section-head h2{color:#fff;}
+  .how .section-head p{color:#aab6d0;}
+  .how .section-head .kicker{color:#ff8f8f;}
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .step{
+    border:1px solid rgba(255,255,255,0.14); border-radius:8px; padding:22px 20px;
+    background:rgba(255,255,255,0.03);
+  }
+  .step .num{
+    font-family:var(--mono); font-size:14px; color:#ff8f8f; margin-bottom:14px; display:block;
+  }
+  .step h3{color:#fff; font-size:17px; margin:0 0 8px;}
+  .step p{color:#aab6d0; font-size:14.5px; margin:0;}
+
+  /* ---------- Dashboard preview ---------- */
+  .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .stat-card{
+    background:var(--card); border:1px solid var(--line); border-radius:8px;
+    padding:22px; position:relative; overflow:hidden;
+  }
+  .stat-card .bar{position:absolute; left:0; top:0; bottom:0; width:4px;}
+  .stat-card.sales .bar{background:var(--ink);}
+  .stat-card.paid .bar{background:var(--good);}
+  .stat-card.owed .bar{background:var(--owe);}
+  .stat-card.cust .bar{background:var(--accent-2);}
+  .stat-card .label{font-size:13.5px; color:var(--muted); display:block; margin-bottom:10px;}
+  .stat-card strong{
+    font-family:var(--mono); font-size:25px; color:var(--ink); display:block; letter-spacing:-0.01em;
+  }
+  .stat-card small{color:var(--muted-2); font-size:12.5px;}
+
+  /* ---------- Testimonial ---------- */
+  .testimonial{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .testimonial blockquote{
+    margin:0; font-family:var(--serif); font-size:clamp(1.3rem,2.4vw,1.7rem);
+    color:var(--ink); max-width:34ch; line-height:1.4;
+  }
+  .testimonial figcaption{margin-top:20px; color:var(--muted); font-size:15px;}
+  .testimonial-grid{display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:center;}
+  .mini-receipt{
+    border:1px solid var(--line); border-radius:8px; background:var(--paper); padding:18px 20px;
+    font-family:var(--mono); font-size:13px; color:var(--ink-soft);
+  }
+  .mini-receipt .mr-row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--line);}
+  .mini-receipt .mr-row:last-child{border-bottom:none;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{border-top:1px solid var(--line);}
+  details.faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
+  details.faq-item summary{
+    cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;
+    font-weight:600; color:var(--ink); font-size:16.5px;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none;}
+  details.faq-item summary .chev{transition:transform 0.2s ease; flex-shrink:0; margin-left:16px;}
+  details.faq-item[open] summary .chev{transform:rotate(180deg);}
+  details.faq-item .a{color:var(--muted); padding-top:12px; max-width:64ch;}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:linear-gradient(120deg, var(--ink), #0d2a63);
+    color:#fff; border-radius:10px; padding:56px 48px;
+    display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+  }
+  .final-cta h2{color:#fff; margin-bottom:10px; font-size:clamp(1.5rem,2.6vw,2rem);}
+  .final-cta p{color:#c3cde3; margin-bottom:0;}
+  .final-cta .btn-ghost{border-color:rgba(255,255,255,0.4); color:#fff;}
+  .final-cta .btn-ghost:hover{border-color:#fff;}
+
+  /* ---------- Footer ---------- */
+  footer.site{border-top:1px solid var(--line); padding:56px 0 32px; background:var(--card);}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; margin-bottom:40px;}
+  .footer-brand p{color:var(--muted); font-size:14.5px;}
+  .footer-col h4{font-size:14px; color:var(--ink); margin:0 0 14px;}
+  .footer-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{color:var(--muted); text-decoration:none; font-size:14.5px;}
+  .footer-col a:hover{color:var(--ink);}
+  .footer-bottom{
+    border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between;
+    color:var(--muted-2); font-size:13.5px; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    nav.primary{display:none;}
+    .menu-toggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .problem-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .testimonial-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .feature-row{grid-template-columns:48px 1fr; grid-template-areas:"icon title" "body body";}
+    .feature-row .f-icon{grid-area:icon;}
+    .feature-row h3{grid-area:title;}
+    .feature-row p{grid-area:body;}
+  }
+  @media (max-width:600px){
+    .steps{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .final-cta{padding:40px 24px;}
+    section{padding:64px 0;}
+  }
+
+  /* Mobile nav drawer */
+  #mobile-nav{
+    display:none; flex-direction:column; gap:2px; padding:8px 24px 20px;
+    border-bottom:1px solid var(--line); background:var(--paper);
+  }
+  #mobile-nav.open{display:flex;}
+  #mobile-nav a{
+    padding:12px 4px; text-decoration:none; color:var(--ink-soft); font-weight:500;
+    border-bottom:1px solid var(--line);
+  }
+  #mobile-nav .btn{margin-top:12px;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row container">
+    <a class="brand" href="#top" aria-label="Expenso home">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span class="brand-word">Expenso</span>
+    </a>
+
+    <nav class="primary" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="btn btn-primary" href="mailto:hello@expenso.app?subject=Get%20started%20with%20Expenso">Get started</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" aria-label="Mobile">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="mailto:hello@expenso.app?subject=Get%20started%20with%20Expenso">Get started</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Business account management</span>
+        <h1>Every sale, every payment, every customer — one ledger.</h1>
+        <p class="lede">Expenso replaces the torn notebook page and the "let me check and call you back" with one simple place to run your shop, store, or trade: customers, suppliers, products, sales and payments, all tracked together.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="mailto:hello@expenso.app?subject=Get%20started%20with%20Expenso">Get started free</a>
+          <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+        </div>
+        <p class="trust-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          No installation. Figures shown in Naira, the way your business actually deals.
+        </p>
+      </div>
+
+      <div class="ledger-card" aria-hidden="false">
+        <div class="ledger-head">
+          <span class="who">Amaka's Provisions — customer ledger</span>
+          <span class="tag"><span class="dot"></span>Updated just now</span>
+        </div>
+        <div class="ledger-body">
+          <table class="ledger">
+            <thead>
+              <tr>
+                <th>Goods</th>
+                <th class="num">Qty</th>
+                <th class="num">Price</th>
+                <th class="num">Paid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bag of rice (50kg)</td>
+                <td class="num">2</td>
+                <td class="num">₦45,000</td>
+                <td class="num">₦40,000</td>
+              </tr>
+              <tr>
+                <td>Cooking oil (5L)</td>
+                <td class="num">3</td>
+                <td class="num">₦12,500</td>
+                <td class="num">₦12,500</td>
+              </tr>
+              <tr>
+                <td>Sugar (bag)</td>
+                <td class="num">1</td>
+                <td class="num">₦25,000</td>
+                <td class="num">₦25,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ledger-totals">
+          <div class="row"><span>Total value</span><span>₦82,500</span></div>
+          <div class="row"><span>Amount paid</span><span>₦77,500</span></div>
+          <div class="row balance"><span>Balance owed</span><span>₦5,000</span></div>
+        </div>
+        <div class="ledger-foot">
+          <span>Customer since Mar 2026</span>
+          <span>3 transactions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container problem-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--accent-2)">The problem</span>
+        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem); max-width:16ch;">Running a business shouldn't mean guessing who owes what.</h2>
+        <p style="color:var(--muted); font-size:17px;">Most small businesses track money across three or four places at once — and none of them talk to each other.</p>
+      </div>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          <span>A notebook for customer credit, until a page goes missing.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          <span>A chat thread you scroll through to remember who paid what.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          <span>A supplier bill you're sure you paid, but can't prove it.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          <span>No clear answer, at any moment, to "how much is the business actually owed?"</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">What's inside</span>
+        <h2>Everything the shop needs, nothing it doesn't</h2>
+        <p>Five modules that cover the whole flow of running a small business — from the first customer to the monthly numbers.</p>
+      </div>
+
+      <div class="feature-ledger">
+        <div class="feature-row">
+          <div class="f-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Customers</h3>
+          <p>Save every customer once. Log a sale, mark what's been paid, and see who still owes you at a glance — no flipping back through old pages.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="f-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Suppliers</h3>
+          <p>Track purchases and payments to the people who supply your stock, so a bill never quietly slips through the cracks.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="f-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8L12 3 3 8l9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          </div>
+          <h3>Products</h3>
+          <p>Keep a running list of what you sell, with pricing that stays accurate and consistent every time it's used on a sale.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="f-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15v-4m4 4V9m4 6v-8"/></svg>
+          </div>
+          <h3>Reports</h3>
+          <p>Filter every transaction by day, week, or month, and see exactly where the money moved — and where it's still owed.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="f-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="12" width="8" height="9" rx="1"/><rect x="3" y="14" width="8" height="7" rx="1"/></svg>
+          </div>
+          <h3>Dashboard</h3>
+          <p>Total sales, amount received, and outstanding balances update the moment you record a transaction — no separate calculation required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <h2>From first customer to monthly report, in four steps</h2>
+        <p>No training required — if you can write in a notebook, you can use Expenso.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Add a customer or supplier</h3>
+          <p>Name, phone, and email — entered once, used every time after.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Record the transaction</h3>
+          <p>Goods, quantity, price, and however much has been paid so far.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Expenso tracks the balance</h3>
+          <p>No mental math, no forgotten IOUs, no missing notebook pages.</p>
+        </div>
+        <div class="step">
+          <span class="num">04</span>
+          <h3>Check the dashboard</h3>
+          <p>Sales, payments received, and what's outstanding, in one glance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD PREVIEW -->
+  <section id="dashboard">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">At a glance</span>
+        <h2>The dashboard, the moment you log in</h2>
+        <p>Every number below updates automatically as sales and payments are recorded — nothing to reconcile by hand.</p>
+      </div>
+
+      <div class="stat-grid" id="stat-grid">
+        <div class="stat-card sales">
+          <span class="bar"></span>
+          <span class="label">Total sales</span>
+          <strong data-count="1248500" data-prefix="₦">₦0</strong>
+          <small>Total value of transactions</small>
+        </div>
+        <div class="stat-card paid">
+          <span class="bar"></span>
+          <span class="label">Amount received</span>
+          <strong data-count="968200" data-prefix="₦">₦0</strong>
+          <small>Payments received</small>
+        </div>
+        <div class="stat-card owed">
+          <span class="bar"></span>
+          <span class="label">Outstanding</span>
+          <strong data-count="280300" data-prefix="₦">₦0</strong>
+          <small>Money customers owe</small>
+        </div>
+        <div class="stat-card cust">
+          <span class="bar"></span>
+          <span class="label">Customers</span>
+          <strong data-count="46" data-prefix="">0</strong>
+          <small>Active customer accounts</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="container testimonial-grid">
+      <figure>
+        <blockquote>"I used to keep three notebooks and still forget who paid. Now I open one page and I know."</blockquote>
+        <figcaption>— Ifeoma B., fabric trader (illustrative example)</figcaption>
+      </figure>
+      <div class="mini-receipt" aria-hidden="true">
+        <div class="mr-row"><span>Ankara fabric — 6 yards</span><span>₦54,000</span></div>
+        <div class="mr-row"><span>Paid</span><span>₦54,000</span></div>
+        <div class="mr-row"><span>Balance</span><span style="color:var(--good)">₦0</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What is Expenso?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="a">Expenso is a simple business manager for tracking customers, suppliers, products, sales and payments — built for shops, traders, and small businesses.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Expenso free to use?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="a">Yes. Create an account and start tracking your customers, sales, and payments at no cost.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What currency does Expenso use?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="a">Expenso displays amounts in Naira, so the figures match what your business actually deals in.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to install anything?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="a">No. Expenso runs in your web browser, so there's nothing to install.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I see reports on my sales?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="a">Yes. Filter your transactions by day, week, or month and see exactly how much came in, went out, and is still outstanding.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="final-cta">
+        <div>
+          <h2>Stop guessing who owes what.</h2>
+          <p>Bring your customers, suppliers, and sales into one ledger today.</p>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="mailto:hello@expenso.app?subject=Get%20started%20with%20Expenso">Get started free</a>
+          <a class="btn btn-ghost" href="#features">Review features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Expenso home" style="margin-bottom:12px; display:inline-flex;">
+          <span class="brand-mark" aria-hidden="true">E</span>
+          <span class="brand-word">Expenso</span>
+        </a>
+        <p>Business account management for shops, traders, and small businesses — customers, suppliers, sales, and payments, all in one simple place.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@expenso.app">hello@expenso.app</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Expenso. All rights reserved.</span>
+      <span>Built for shops and traders.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  var toggle = document.getElementById('menu-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  toggle.addEventListener('click', function () {
+    var isOpen = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Count-up animation for dashboard stats, once in view
+  var counted = false;
+  function formatNumber(n, prefix) {
+    return prefix + Math.round(n).toLocaleString('en-NG');
+  }
+  function runCountUp() {
+    if (counted) return;
+    counted = true;
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var target = parseFloat(el.getAttribute('data-count'));
+      var prefix = el.getAttribute('data-prefix') || '';
+      var duration = 900;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = formatNumber(target * eased, prefix);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  var statGrid = document.getElementById('stat-grid');
+  if ('IntersectionObserver' in window && statGrid) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          runCountUp();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(statGrid);
+  } else {
+    runCountUp();
+  }
+
+  // Only one FAQ open at a time
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) {
+        document.querySelectorAll('.faq-item').forEach(function (other) {
+          if (other !== item) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>

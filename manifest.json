@@ -1,0 +1,16 @@
+{
+  "name": "Expenso — Business Manager",
+  "short_name": "Expenso",
+  "description": "Track customers, suppliers, products, sales and payments in one simple ledger.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#071d49",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
